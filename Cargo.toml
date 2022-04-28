@@ -4,5 +4,6 @@ members = [
     "cookmain",
     "algorithms",
     "command",
-    "terminal"
+    "terminal",
+    "demoapp"
 ]

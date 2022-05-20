@@ -1,6 +1,8 @@
+use std::borrow::BorrowMut;
 use std::thread;
 
 fn main() {
+    /*
     println!("数组线程demo thread");
 
     let vec1 = vec![B(1), B(2), B(3), B(4)];
@@ -51,8 +53,36 @@ fn main() {
 
     let cpoint = points.get(0);
     println!("current point {:?}", cpoint);
+    */
 
+    /*
+    let mut s = String::from("hello world");
+    let s1 = &s;
+    let s2 = &s;
+    println!("{:?}, {:?}", s1, s2);
 
+    let s3 = &mut s;
+    println!("{:?}", s3);
+     */
+
+    /*
+    let (a, b) = (&5, &6);
+    let c = max(a, b);
+    println!("max = {:?}", c);
+    */
+    let a = Box::new(5);
+    println!("a {:?}", a);
+    let mut b = *a;
+    println!("b {:?}", b);
+
+}
+
+fn max<'a>(a: &'a i32, b: &'a i32) -> &'a i32 {
+    if a > b {
+        a
+    } else {
+        b
+    }
 }
 
 
@@ -60,14 +90,12 @@ fn main() {
 struct B(i32);
 
 trait hello {
-    fn printhello(&self) -> (){
+    fn printhello(&self) -> () {
         println!("hello i32");
     }
 }
 
 
-impl hello for i32 {
-
-}
+impl hello for i32 {}
 
 

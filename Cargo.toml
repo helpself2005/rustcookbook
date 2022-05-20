@@ -5,5 +5,7 @@ members = [
     "algorithms",
     "command",
     "terminal",
-    "demoapp"
+    "demoapp",
+    "demothread"
+
 ]

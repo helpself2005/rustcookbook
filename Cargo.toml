@@ -6,6 +6,7 @@ members = [
     "command",
     "terminal",
     "demoapp",
-    "demothread"
-
+    "demothread",
+    "multithread",
+    "demogat"
 ]

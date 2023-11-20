@@ -8,5 +8,6 @@ members = [
     "demoapp",
     "demothread",
     "multithread",
-    "demogat"
+    "demogat",
+    "demotrait"
 ]

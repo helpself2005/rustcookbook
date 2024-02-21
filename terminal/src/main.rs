@@ -1,7 +1,7 @@
 use ansi_term::Colour;
 use algorithms::entities::user::User;
 use algorithms::leetcode::listnode::ListNode;
-use algorithms::leetcode::add_two_listnode;
+use algorithms::leetcode::{add_two_listnode,add_two_numbers};
 
 fn main() {
     /*
@@ -24,7 +24,8 @@ fn main() {
     let l2 = Some(Box::new(ListNode{val: 5, next: Some(Box::new(ListNode{val: 6,
         next: Some(Box::new(ListNode{val: 4, next:None}))}))}));
 
-    let l3 = add_two_listnode(l1, l2);
+    let l3 = add_two_numbers(l1, l2);
+    //let l3 = add_two_listnode(l1, l2);
     println!("{:?}", l3)
 }
 

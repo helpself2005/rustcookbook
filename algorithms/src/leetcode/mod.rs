@@ -63,18 +63,18 @@ fn add_two(l1: &Option<Box<ListNode>>, l2: &Option<Box<ListNode>>, carry: i32) -
             // 进位了，额外创建一个节点
             Some(Box::new(ListNode::new(carry)))
         }
-        (None, Some(n2)) => add_two(l2, l1, carry),
+        (None, Some(_n2)) => add_two(l2, l1, carry),
         (Some(n1), None) => {
             let mut l1 = n1.clone();
-            let mut sum = carry + l1.val; // 节点值和进位加在一起
+            let sum = carry + l1.val; // 节点值和进位加在一起
             l1.val = sum % 10; // 每个节点保存一个数位
             l1.next = add_two(&n1.next, &None, sum / 10); // 进位
             Some(l1)
         }
         (Some(n1), Some(n2)) => {
             let mut l1 = n1.clone();
-            let mut l2 = n2.clone();
-            let mut sum = carry + l1.val + l2.val; // 节点值和进位加在一起
+            let l2 = n2.clone();
+            let sum = carry + l1.val + l2.val; // 节点值和进位加在一起
             l1.val = sum % 10; // 每个节点保存一个数位
             l1.next = add_two(&l1.next, &l2.next, sum / 10); // 进位
             Some(l1)
